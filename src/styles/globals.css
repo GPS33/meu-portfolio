@@ -1,0 +1,43 @@
+/* src/app/globals.css */
+
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Cor de fundo escura do tema e texto branco padrão */
+    @apply bg-background text-white;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Reset de margens e aplicação de gradiente animado */
+    @apply bg-background text-white;
+    margin: 0;
+    padding: 0;
+
+    /* Gradiente com movimento contínuo estilo synthwave */
+    background: linear-gradient(-45deg, #0b0f1a, #1e1b3a, #151529, #0b0f1a);
+    background-size: 400% 400%;
+    animation: bgMotion 15s ease infinite;
+
+    /* Tipografia principal */
+    font-family: 'Inter', sans-serif;
+
+    /* Evita barra de rolagem horizontal */
+    overflow-x: hidden;
+  }
+
+  /* Animação contínua do fundo */
+  @keyframes bgMotion {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
