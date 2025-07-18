@@ -5,7 +5,7 @@ import {
   FaUnity, FaAutoprefixer, FaCogs, FaDatabase, FaFileWord, FaCode, FaLanguage
 } from 'react-icons/fa'
 import {
-  SiTailwindcss, SiMysql, SiJavascript, SiBootstrap, SiVite, SiSharp, SiTypescript, SiNextdotjs
+  SiTailwindcss, SiMysql, SiJavascript, SiBootstrap, SiVite, SiTypescript, SiNextdotjs
 } from 'react-icons/si'
 import { WrapperFadeIn } from './WrapperFadeIn'
 import { motion } from 'framer-motion'

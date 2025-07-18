@@ -10,6 +10,10 @@ export function Contato() {
   const [form, setForm] = useState({ nome: '', email: '', mensagem: '' })
   const [enviando, setEnviando] = useState(false)
 
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
@@ -25,20 +29,15 @@ export function Contato() {
     }
 
     emailjs
-  .send(
-    'service_bn1koxs',       // ID do serviço de e-mail
-    'template_wg4xz83',      // ID do template criado
-    templateParams,          // Dados preenchidos do formulário
-    'qMWYeFxfjlr7pJDMV'       // Public Key (API Key)
-  )
-  .then(() => {
-    alert('Mensagem enviada com sucesso!')
-    setForm({ nome: '', email: '', mensagem: '' })
-  })
-  .catch(() => {
-    alert('Ocorreu um erro ao enviar. Tente novamente mais tarde.')
-  })
-  .finally(() => setEnviando(false))
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then(() => {
+        alert('Mensagem enviada com sucesso!')
+        setForm({ nome: '', email: '', mensagem: '' })
+      })
+      .catch(() => {
+        alert('Ocorreu um erro ao enviar. Tente novamente mais tarde.')
+      })
+      .finally(() => setEnviando(false))
   }
 
   return (
@@ -48,7 +47,10 @@ export function Contato() {
           Entre em Contato
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6 bg-[#151529] p-8 rounded-xl border border-white/10 shadow-lg">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 bg-[#151529] p-8 rounded-xl border border-white/10 shadow-lg"
+        >
           <div>
             <label htmlFor="nome" className="block text-sm font-medium text-gray-200 mb-1">
               Nome

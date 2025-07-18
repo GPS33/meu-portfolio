@@ -1,7 +1,6 @@
 'use client'
 
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { FiArrowUp } from 'react-icons/fi'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 

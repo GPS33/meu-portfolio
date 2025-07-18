@@ -29,12 +29,14 @@ export function NeonBackground() {
 
     function animate() {
       if (!ctx || !canvas) return
+
       ctx.fillStyle = '#0b0f1a'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      for (let line of lines) {
+      for (const line of lines) {
         ctx.beginPath()
         ctx.moveTo(line.x, line.y)
+
         line.x += line.dx
         line.y += line.dy
 

@@ -1,7 +1,6 @@
 'use client'
 
 import { FaHome, FaUserAlt, FaTools, FaFolderOpen, FaEnvelope } from 'react-icons/fa'
-import { FiArrowUp } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
