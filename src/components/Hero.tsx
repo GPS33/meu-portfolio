@@ -49,7 +49,7 @@ export function Hero() {
 
 <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
   <a
-    href="/curriculo.pdf"
+    href="/Currículo - Gustavo Pereira dos Santos.pdf"
     download
     className="bg-primary text-white font-semibold px-6 py-2 rounded-lg shadow-md transition duration-300 hover:bg-secondary hover:shadow-[0_0_15px_#f72585]"
   >
