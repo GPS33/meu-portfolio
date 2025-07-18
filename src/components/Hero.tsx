@@ -23,7 +23,7 @@ export function Hero() {
 
         {/* Subtítulo */}
         <p className="text-secondary mt-2 text-lg md:text-xl">
-          Desenvolvedor Front-End
+          Desenvolvedor Web
         </p>
         {/* Botões com animação hover neon */}
         <p className="text-sm md:text-base text-white mt-4 tracking-wide flex flex-wrap gap-2 max-w-xl">
