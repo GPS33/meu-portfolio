@@ -2,10 +2,12 @@
 
 import {
   FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaPhp,
-  FaUnity, FaAutoprefixer, FaCogs, FaDatabase, FaFileWord, FaCode, FaLanguage
+  FaUnity, FaAutoprefixer, FaCogs, FaDatabase, FaFileWord, FaCode, FaLanguage,
+  FaNodeJs
 } from 'react-icons/fa'
 import {
-  SiTailwindcss, SiMysql, SiJavascript, SiBootstrap, SiVite, SiTypescript, SiNextdotjs
+  SiTailwindcss, SiMysql, SiJavascript, SiBootstrap, SiVite, SiTypescript, SiNextdotjs,
+  SiDocker
 } from 'react-icons/si'
 import { WrapperFadeIn } from './WrapperFadeIn'
 import { motion } from 'framer-motion'
@@ -35,7 +37,9 @@ export function Conhecimentos() {
             <Skill icon={<SiVite />} label="Vite" color="text-violet-400" />
             <Skill icon={<FaPhp />} label="PHP" color="text-indigo-400" />
             <Skill icon={<FaDatabase />} label="Banco de Dados" color="text-emerald-400" />
+            <Skill icon={<FaNodeJs />} label="Node" color="text-emerald-400" />
             <Skill icon={<SiMysql />} label="MySQL" color="text-blue-300" />
+            <Skill icon={<SiDocker />} label="Docker" color="text-blue-300" />
             <Skill icon={<FaGitAlt />} label="Git" color="text-red-500" />
           </div>
         </div>

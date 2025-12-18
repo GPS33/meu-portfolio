@@ -34,6 +34,8 @@ export function Hero() {
     { name: 'NextJS', color: 'bg-black text-white' },
     { name: 'ReactJS', color: 'bg-cyan-500' },
     { name: 'PHP', color: 'bg-blue-500' },
+    { name: 'NodeJS', color: 'bg-emerald-500' },
+    { name: 'MySQL', color: 'bg-blue-500' },
     { name: 'Bootstrap', color: 'bg-purple-600' },
     { name: 'Vite', color: 'bg-indigo-500' },
     { name: 'Tailwind', color: 'bg-sky-500' },
