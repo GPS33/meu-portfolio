@@ -9,7 +9,7 @@ import profileImg from '@/../public/images/img.jpg'
 export function Hero() {
   return (
     <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4">
-      {/* Animação do container ao aparecer na tela */}
+      {/* Animação do container */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -33,6 +33,7 @@ export function Hero() {
     { name: 'TypeScript', color: 'bg-blue-600' },
     { name: 'NextJS', color: 'bg-black text-white' },
     { name: 'ReactJS', color: 'bg-cyan-500' },
+    { name: 'PHP', color: 'bg-blue-500' },
     { name: 'Bootstrap', color: 'bg-purple-600' },
     { name: 'Vite', color: 'bg-indigo-500' },
     { name: 'Tailwind', color: 'bg-sky-500' },
