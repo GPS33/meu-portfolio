@@ -2,97 +2,131 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaGraduationCap, FaTools, FaDraftingCompass, FaLaptop } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import {
+  FaGraduationCap,
+  FaTools,
+  FaDraftingCompass,
+  FaLaptop,
+} from 'react-icons/fa'
+
 import { WrapperFadeIn } from './WrapperFadeIn'
+
+/* -------------------------------------------------------------------------- */
+/*                                    DATA                                    */
+/* -------------------------------------------------------------------------- */
+
+const HIGHLIGHTS = [
+  {
+    icon: FaGraduationCap,
+    title: 'Técnico em Informática',
+    desc: 'Formado pelo IFSul – Campus Charqueadas (2018–2022)',
+  },
+  {
+    icon: FaLaptop,
+    title: 'Desenvolvedor Web',
+    desc: 'Experiência com React, Next.js, TypeScript, Tailwind, Bootstrap e Vite',
+  },
+  {
+    icon: FaDraftingCompass,
+    title: 'Desenho Técnico / Topografia',
+    desc: 'Agro Engenharia (set/2022 – abr/2024)',
+  },
+  {
+    icon: FaTools,
+    title: 'Manutenção de Computadores',
+    desc: 'Limpeza, formatação e remoção de vírus',
+  },
+]
+
+/* -------------------------------------------------------------------------- */
+/*                                  COMPONENT                                 */
+/* -------------------------------------------------------------------------- */
 
 export function Sobre() {
   return (
     <section
       id="sobre"
-      className="px-6 max-w-7xl mx-auto py-20 scroll-mt-20"
+      className="scroll-mt-24 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-24"
     >
       <WrapperFadeIn>
-        {/* Título da seção */}
-        <h2 className="text-4xl font-bold text-center mb-16 drop-shadow-[0_0_10px_#f72585] text-white">
-          Sobre Mim
-        </h2>
+        {/* HEADER */}
+        <header className="text-center mb-20">
+          <h2 className="text-4xl font-bold drop-shadow-[0_0_10px_#f72585]">
+            Sobre Mim
+          </h2>
+          <p className="mt-4 text-gray-400 max-w-xl mx-auto">
+            Um panorama claro da minha formação, experiência e trajetória
+            profissional.
+          </p>
+        </header>
 
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          {/* Imagem do perfil com animação sutil no hover */}
+        {/* IMAGEM + CARDS */}
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-stretch mb-20">
+          {/* FOTO */}
           <motion.div
-            whileHover={{ scale: 1.12, rotate: 1 }}
-            transition={{ type: 'spring', stiffness: 200 }}
-            className="relative w-72 h-90 rounded-xl overflow-hidden shadow-[0_0_20px_#f72585] border border-primary"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 180, damping: 14 }}
+            className="relative w-full max-w-sm aspect-[3/4] mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_24px_#f72585]/40"
           >
             <Image
               src="/images/eu.jpg"
               alt="Foto de perfil de Gustavo"
               fill
-              className="object-cover h-[130%] top-[-15%]"
+              className="object-cover object-top"
               priority
             />
           </motion.div>
 
-          {/* Conteúdo textual e cards à direita */}
-          <div className="flex-1 space-y-10">
-            {/* Cards com formação e experiência */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <Card
-                icon={<FaGraduationCap size={28} />}
-                title="Técnico em Informática"
-                desc="Formado no IFSul Campus Charqueadas (2018–2022)"
+          {/* CARDS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {HIGHLIGHTS.map(({ icon: Icon, title, desc }) => (
+              <InfoCard
+                key={title}
+                icon={<Icon />}
+                title={title}
+                desc={desc}
               />
-              <Card
-                icon={<FaLaptop size={28} />}
-                title="Desenvolvedor Web"
-                desc="Experiência com HTML/CSS, JavaScript, TypeScript, NextJS, ReactJS, Bootstrap, Vite e Tailwind"
-              />
-              <Card
-                icon={<FaDraftingCompass size={28} />}
-                title="Desenhista Técnico – Topografia"
-                desc="Trabalhando na empresa Agro Engenharia (set/2022 – abr/2024)"
-              />
-              <Card
-                icon={<FaTools size={28} />}
-                title="Manutenção de Computadores"
-                desc="Limpeza, formatação e remoção de vírus"
-              />
-            </div>
-
-            {/* Texto de apresentação com destaque neon rosa */}
-<div className="hover:ring-1 hover:ring-[#f72585]/60 hover:scale-[1.01] transition-all duration-300 ease-in-out rounded-xl">
-  <p className="text-neutral-300 text-justify leading-relaxed text-base md:text-lg px-4 py-4
-    backdrop-blur-sm bg-white/5 rounded-xl shadow-[0_0_12px_#f72585]/20
-    transition-opacity duration-700 ease-in-out animate-fade-in">
-    Desenvolvedor web e técnico em informática, trabalhei na empresa Agro Engenharia como desenhista técnico de topografia e na empresa Making Publicidade como desenvolvedor web. Também atuei de forma autônoma com manutenção de computadores. Atualmente curso Análise e Desenvolvimento de Sistemas pela UniBF e sigo aprofundando meus conhecimentos em tecnologias modernas do desenvolvimento web.
-  </p>
-</div>
-
-
-            {/* Botão "Fale Comigo" */}
-            <div className="flex">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: 'spring', stiffness: 250 }}
-              >
-                <Link
-                  href="#contato"
-                  className="bg-primary hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition shadow hover:shadow-[0_0_12px_#f72585] focus:outline-none focus:ring-2 focus:ring-pink-500"
-                >
-                  Fale Comigo
-                </Link>
-              </motion.div>
-            </div>
+            ))}
           </div>
+        </div>
+
+        {/* TEXTO CENTRALIZADO */}
+        <motion.div
+          whileHover={{ scale: 1.01 }}
+          className="max-w-3xl mx-auto text-center rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 md:p-8 shadow-[0_0_16px_#f72585]/20 mb-16"
+        >
+          <p className="text-neutral-300 leading-relaxed text-base md:text-lg">
+            Desenvolvedor web e técnico em informática, atuei como desenhista
+            técnico de topografia na Agro Engenharia e como desenvolvedor web na
+            Making Publicidade. Também trabalhei de forma autônoma com manutenção
+            de computadores. Atualmente curso Análise e Desenvolvimento de
+            Sistemas pela UniBF e sigo aprofundando meus conhecimentos em
+            tecnologias modernas de desenvolvimento web.
+          </p>
+        </motion.div>
+
+        {/* CTA */}
+        <div className="flex justify-center">
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link
+              href="#contato"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 font-semibold text-white shadow transition hover:bg-pink-600 hover:shadow-[0_0_14px_#f72585] focus:outline-none focus:ring-2 focus:ring-pink-500"
+            >
+              Fale Comigo
+            </Link>
+          </motion.div>
         </div>
       </WrapperFadeIn>
     </section>
   )
 }
 
-// Componente reutilizável de card com ícone, título e descrição
-function Card({
+/* -------------------------------------------------------------------------- */
+/*                               SUBCOMPONENTS                                */
+/* -------------------------------------------------------------------------- */
+
+function InfoCard({
   icon,
   title,
   desc,
@@ -103,13 +137,67 @@ function Card({
 }) {
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
-      transition={{ duration: 0.3 }}
-      className="bg-[#151529] p-6 rounded-lg shadow-md border border-white/5 flex flex-col items-center text-center hover:shadow-[0_0_12px_#f72585] transition"
+      whileHover={{ y: -4, scale: 1.03 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+      className="
+        group
+        relative
+        flex
+        flex-col
+        justify-center
+        rounded-2xl
+        bg-gradient-to-br from-[#17172f] to-[#111126]
+        border border-white/10
+        p-7
+        shadow-md
+        hover:shadow-[0_0_18px_#f72585]/40
+      "
     >
-      <div className="text-primary mb-3 text-2xl">{icon}</div>
-      <h5 className="font-semibold text-lg mb-1 text-white">{title}</h5>
-      <small className="text-gray-400">{desc}</small>
+      {/* ÍCONE */}
+      <div
+        className="
+          mb-4
+          inline-flex
+          h-12
+          w-12
+          items-center
+          justify-center
+          rounded-full
+          bg-primary/15
+          text-primary
+          text-xl
+          shadow-[0_0_12px_#f72585]/40
+          transition
+          group-hover:scale-110
+        "
+      >
+        {icon}
+      </div>
+
+      {/* TÍTULO */}
+      <h3 className="text-lg font-semibold tracking-wide text-white mb-2">
+        {title}
+      </h3>
+
+      {/* DESCRIÇÃO */}
+      <p className="text-sm leading-relaxed text-neutral-400">
+        {desc}
+      </p>
+
+      {/* DETALHE DECORATIVO */}
+      <span
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-px
+          bg-gradient-to-r from-transparent via-primary/40 to-transparent
+          opacity-0
+          transition
+          group-hover:opacity-100
+        "
+      />
     </motion.div>
   )
 }

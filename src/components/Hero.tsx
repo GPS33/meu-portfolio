@@ -33,12 +33,16 @@ export function Hero() {
     { name: 'TypeScript', color: 'bg-blue-600' },
     { name: 'NextJS', color: 'bg-black text-white' },
     { name: 'ReactJS', color: 'bg-cyan-500' },
+    { name: 'API REST', color: 'bg-gray-500' },
     { name: 'PHP', color: 'bg-blue-500' },
-    { name: 'NodeJS', color: 'bg-emerald-500' },
+    { name: 'NodeJS/Express', color: 'bg-emerald-500' },
     { name: 'MySQL', color: 'bg-blue-500' },
+    { name: 'PostgreSQL', color: 'bg-blue-500' },
+    { name: 'Docker', color: 'bg-cyan-500' },
     { name: 'Bootstrap', color: 'bg-purple-600' },
     { name: 'Vite', color: 'bg-indigo-500' },
     { name: 'Tailwind', color: 'bg-sky-500' },
+    { name: 'Git', color: 'bg-black-500' },
   ].map((tech, idx) => (
     <span
       key={idx}
