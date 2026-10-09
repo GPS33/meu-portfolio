@@ -99,10 +99,8 @@ export function Sobre() {
           <p className="text-neutral-300 leading-relaxed text-base md:text-lg">
             Desenvolvedor web e técnico em informática, atuei como desenhista
             técnico de topografia na Agro Engenharia e como desenvolvedor web na
-            Making Publicidade. Também trabalhei de forma autônoma com manutenção
-            de computadores. Atualmente curso Análise e Desenvolvimento de
-            Sistemas pela UniBF e sigo aprofundando meus conhecimentos em
-            tecnologias modernas de desenvolvimento web.
+            Making Publicidade. Trabalho atualmente de forma autônoma com manutenção
+            de computadores e celulares.
           </p>
         </motion.div>
 
